@@ -21,10 +21,18 @@ public class AMC_Practica2a {
 
     
     public static final int MAX = 1500;
-    public static final int REPETICIONES = 10;
     
     public static void main(String[] args) {
 
+        int TALLAS [] = new int[4];
+        
+        TALLAS[0] = 200;
+        TALLAS[1] = 500;
+        TALLAS[2] = 1500;
+        TALLAS[3] = 5000;
+        
+        int talla = 0;
+        
         String nombreFichero = "";
         
         int opcion;
@@ -48,7 +56,9 @@ public class AMC_Practica2a {
 
             switch(opcion){
                 case 1:
-                    ArrayDePuntos = Algo.GenerarPuntosAleatorios();
+                    System.out.println("Escriba la talla: ");
+                    talla = scn.nextInt();
+                    ArrayDePuntos = Algo.GenerarPuntosAleatorios(talla);
                 break;
 
                 case 2:
@@ -73,7 +83,7 @@ public class AMC_Practica2a {
 
                     Algo.OrdenarArrayPunto(ArrayDePuntos);
                     
-                    for(int i = 0; i < REPETICIONES; i++){
+                    for(int i = 0; i < TALLAS.length; i++){
                      
                         tiempoini = System.nanoTime();
                         distanciaminima = Algo.DistanciaMinimaExhaustivo(ArrayDePuntos);
@@ -81,7 +91,7 @@ public class AMC_Practica2a {
                         tiempototal += tiempofin-tiempoini;
                     }
                     System.out.println("La distancia minima entre 3 puntos es:" + distanciaminima);
-                    System.out.println("El tiempo dedicado a la tarea es: "+(tiempototal/REPETICIONES)/1000 + " microsegundos");
+                    System.out.println("El tiempo dedicado a la tarea es: "+(tiempototal/10)/1000 + " microsegundos");
                 }    
                 break;
                 
@@ -92,7 +102,7 @@ public class AMC_Practica2a {
                     double distanciaminima = 0;
                     Algo.OrdenarArrayPunto(ArrayDePuntos);
                     
-                    for (int i = 0 ; i < REPETICIONES ; i++) {
+                    for (int i = 0 ; i < TALLAS.length ; i++) {
                         tiempoini = System.nanoTime();
                         distanciaminima = Algo.DistanciaMinimaDyV(ArrayDePuntos);
                         tiempofin = System.nanoTime();
@@ -100,7 +110,7 @@ public class AMC_Practica2a {
                     }
                     
                     System.out.println("La distancia minima entre 3 puntos es:" + distanciaminima);
-                    System.out.println("El tiempo dedicado a la tarea es: "+(tiempototal/REPETICIONES)/1000 + " microsegundos");
+                    System.out.println("El tiempo dedicado a la tarea es: "+(tiempototal/10)/1000 + " microsegundos");
                 }
                 break;
             }

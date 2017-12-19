@@ -19,16 +19,16 @@ public class Algoritmos {
     ArrayList<Punto> puntos;
     
     
-    public ArrayList<Punto>  GenerarPuntosAleatorios(){
+    public ArrayList<Punto>  GenerarPuntosAleatorios(int talla){
 
         Random rnd = new Random(System.currentTimeMillis());        
         ArrayList<Punto> ArrayDePuntos = new ArrayList();
         Punto[] puntosAleatorios;        
-        puntosAleatorios = new Punto[MAX];
+        puntosAleatorios = new Punto[talla];
 
         System.out.println("Generando Puntos Aleatorios");
         
-        for (int i = 0; i < MAX; i++) {
+        for (int i = 0; i < talla; i++) {
             
             int puntox = rnd.nextInt(10000);
             int puntoy = rnd.nextInt(10000);;
@@ -105,9 +105,12 @@ public class Algoritmos {
          
         double distanciaMinima = 0, distancia1 = 0, distancia2 = 0, distancia3 = 0;
                 
-        distancia1 = Math.sqrt(Math.abs(A.getX()-B.getX())+Math.abs(A.getY()-B.getY())) + Math.sqrt(Math.abs(B.getX()-C.getX())+Math.abs(B.getY()-C.getY()));
-        distancia2 = Math.sqrt(Math.abs(A.getX()-C.getX())+Math.abs(A.getY()-C.getY())) + Math.sqrt(Math.abs(C.getX()-B.getX())+Math.abs(C.getY()-B.getY()));
-        distancia3 = Math.sqrt(Math.abs(B.getX()-C.getX())+Math.abs(B.getY()-C.getY())) + Math.sqrt(Math.abs(C.getX()-A.getX())+Math.abs(C.getY()-A.getY()));
+        distancia1 = Math.sqrt(Math.pow(A.getX()-B.getX(),2) + Math.pow(A.getY()-B.getY(),2))
+                + Math.sqrt(Math.pow(B.getX()-C.getX(),2) + Math.pow(B.getY()-C.getY(),2));
+        distancia2 = Math.sqrt(Math.pow(A.getX()-C.getX(),2) + Math.pow(A.getY()-C.getY(),2))
+                + Math.sqrt(Math.pow(C.getX()-B.getX(),2) + Math.pow(C.getY()-B.getY(),2));
+        distancia3 = Math.sqrt(Math.pow(B.getX()-C.getX(),2)+Math.pow(B.getY()-C.getY(),2))
+                + Math.sqrt(Math.pow(C.getX()-A.getX(),2)+Math.pow(C.getY()-A.getY(),2));
                 
         distanciaMinima = Math.min(Math.min(distancia1, distancia2), distancia3);
         return distanciaMinima;
