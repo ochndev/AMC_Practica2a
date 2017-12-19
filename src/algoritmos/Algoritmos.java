@@ -42,6 +42,30 @@ public class Algoritmos {
         
     }
     
+    public ArrayList<Punto> GenerarPuntosAleatoriosPeor(int talla){
+        
+        Random rnd = new Random(System.currentTimeMillis());        
+        ArrayList<Punto> ArrayDePuntos = new ArrayList();
+        Punto puntoAux;
+
+        System.out.println("Generando Puntos Aleatorios");
+        
+        // Para generar los puntos todos en la bisectriz, pongo un mismo x
+        
+        int coordX = rnd.nextInt(10000);
+        
+        for (int i = 0; i < talla; i++) {
+
+            int coordY = rnd.nextInt(10000);
+            puntoAux = new Punto(coordX,coordY);
+            ArrayDePuntos.add(puntoAux);
+        }
+        
+        return ArrayDePuntos;
+    }
+    
+    
+    
     public void OrdenarArrayPunto(ArrayList<Punto> elementos){
         
         int p,j;
