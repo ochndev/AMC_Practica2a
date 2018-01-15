@@ -83,7 +83,7 @@ public class AMC_Practica2a {
 
                     Algo.OrdenarArrayPunto(ArrayDePuntos);
                     
-                    for(int i = 0; i < TALLAS.length; i++){
+                    for(int i = 0; i < 10; i++){
                      
                         tiempoini = System.nanoTime();
                         distanciaminima = Algo.DistanciaMinimaExhaustivo(ArrayDePuntos);
@@ -102,7 +102,7 @@ public class AMC_Practica2a {
                     double distanciaminima = 0;
                     Algo.OrdenarArrayPunto(ArrayDePuntos);
                     
-                    for (int i = 0 ; i < TALLAS.length ; i++) {
+                    for (int i = 0 ; i < 10 ; i++) {
                         tiempoini = System.nanoTime();
                         distanciaminima = Algo.DistanciaMinimaDyV(ArrayDePuntos);
                         tiempofin = System.nanoTime();
