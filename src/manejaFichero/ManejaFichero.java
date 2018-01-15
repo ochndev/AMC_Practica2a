@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileWriter;
+import java.util.Locale;
 
 /**
  *
@@ -38,6 +39,9 @@ public class ManejaFichero {
         File F = new File(inputFile);
         
         Scanner scr = new Scanner(F);
+        
+        scr.useLocale(Locale.ENGLISH);
+        
         Punto punt;
         String cadena = "";
         double coordX, coordY;

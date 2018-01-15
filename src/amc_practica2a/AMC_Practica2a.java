@@ -24,13 +24,6 @@ public class AMC_Practica2a {
     
     public static void main(String[] args) {
 
-        int TALLAS [] = new int[4];
-        
-        TALLAS[0] = 200;
-        TALLAS[1] = 500;
-        TALLAS[2] = 1500;
-        TALLAS[3] = 5000;
-        
         int talla = 0;
         
         String nombreFichero = "";

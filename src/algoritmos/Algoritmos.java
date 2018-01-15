@@ -6,7 +6,6 @@
 package algoritmos;
 
 import amc_practica2a.Punto;
-import static amc_practica2a.AMC_Practica2a.MAX;
 import java.util.ArrayList;
 import java.util.Random;
 
